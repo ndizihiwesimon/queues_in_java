@@ -9,21 +9,21 @@ public class Queue {
     front = -1;
     rear = -1;
   }
-
+//  method to check if queue is full
   boolean isFull() {
     if (front == 0 && rear == SIZE - 1) {
       return true;
     }
     return false;
   }
-
+//  method to check if queue is empty
   boolean isEmpty() {
     if (front == -1)
       return true;
     else
       return false;
   }
-
+//  void method to add element to queue
   void enQueue(int element) {
     if (isFull()) {
       System.out.println("Queue is full");
@@ -35,7 +35,7 @@ public class Queue {
       System.out.println("Inserted " + element);
     }
   }
-
+//  method for removing element from the queue
   int deQueue() {
     int element;
     if (isEmpty()) {
