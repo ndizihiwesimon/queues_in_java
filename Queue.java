@@ -41,24 +41,28 @@ void enQueue(int element) {
 }
   
 //  method for removing element from the queue
-  int deQueue() {
-    int element;
-    if (isEmpty()) {
-      System.out.println("Queue is empty");
-      return (-1);
-    } else {
-      element = items[front];
-      if (front >= rear) {
-        front = -1;
-        rear = -1;
-      } /* Q has only one element, so we reset the queue after deleting it. */
-      else {
-        front++;
-      }
-      System.out.println("Deleted -> " + element);
-      return (element);
+int deQueue() {
+  int element;
+  if (isEmpty()) {
+    System.out.println("Queue is empty");
+    return (-1);
+  } else {
+    element = items[front];
+    if (front >= rear) {
+      front = -1;
+      rear = -1;
+    } /* Q has only one element, so we reset the queue after deleting it. */
+    else {
+      front++;
     }
+    System.out.println("Deleted -> " + element);
+    return (element);
   }
+}
+
+void peek() {
+    System.out.println("Front value is: " + items[front]);
+}
 
   void display() {
     /* Function to display elements of Queue */
@@ -91,6 +95,10 @@ void enQueue(int element) {
     // 6th element can't be added to because the queue is full
     q.enQueue(6);
 
+    // displaying the first element from the queue
+    q.peek();
+
+    // displaying the content of the queue
     q.display();
 
     // deQueue removes element entered first i.e. 1
